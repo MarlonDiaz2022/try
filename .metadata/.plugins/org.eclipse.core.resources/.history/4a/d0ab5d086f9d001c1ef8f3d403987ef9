@@ -1,0 +1,23 @@
+package mundo;
+
+public class Efectivo {
+
+	private String divisa;
+	
+public Efectivo() {}
+	
+	public Efectivo(String divisa) {
+		this.divisa=divisa;	
+	}
+
+	public String getDivisa() {
+		return divisa;
+	}
+
+	public void setDivisa(String divisa) {
+		this.divisa = divisa;
+	}
+	
+	
+	
+}

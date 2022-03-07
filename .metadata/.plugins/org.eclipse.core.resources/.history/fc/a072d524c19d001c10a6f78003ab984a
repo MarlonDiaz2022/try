@@ -1,0 +1,43 @@
+package Fachada;
+
+import javax.swing.JOptionPane;
+
+import Modelo.Estado;
+import Modelo.Pedido;
+import Modelo.Producto;
+
+public class fachada{
+	
+	
+private Producto pro ;	
+private Pedido ped;	
+	
+public fachada() {
+	
+	Producto pro = new Producto();	
+	Pedido ped = new Pedido();	
+}
+
+
+public Producto crearproducto() {
+
+pro.setNombre(JOptionPane.showInputDialog("ingrese nombre"));	
+pro.setCantidad(Short.parseShort(JOptionPane.showInputDialog("ingrese un id o numero de identificacion")));
+pro.setPrecio(Double.parseDouble(JOptionPane.showInputDialog("ingrese un correo electronico")));
+pro.setOrigen(JOptionPane.showInputDialog("ingrese el lugar de origen del producto (nacional o extranjero)"));
+pro.setIva(Double.parseDouble(JOptionPane.showInputDialog("ingrese el valor del iva")));
+
+
+return pro;
+}
+
+public void crearPedido() {
+	
+ped.realizarPedido(pro,new Date(), Estado.PROCESANDO);	
+	
+	
+	
+};
+
+
+}

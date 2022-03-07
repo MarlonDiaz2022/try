@@ -1,0 +1,101 @@
+package mundo;
+
+import javax.swing.JOptionPane;
+
+public class Pago {
+	
+private Pedido pedido;
+
+
+
+
+public Pago() {
+	
+}
+
+public Pago(Pedido pedido) {
+	this.pedido = pedido;
+}
+
+
+
+public void pagarPedido(Tarjetadecredito tarjeta, int cuotas) {
+	
+	int numcuotasP=0;
+		
+	if(tarjeta.getSaldo()-pedido.calcularPrecioT()>=0 && cuotas==0) {
+	
+	pedido.setEstado(Estado.PAGADO);
+	
+System.out.println("el pedido ha sido pagado con exito");	
+	
+}
+else {
+	
+	if(tarjeta.getSaldo()-pedido.calcularPrecioT()<0 || cuotas>=1) {
+
+	pedido.setEstado(Estado.PENDIENTE);
+		 
+	double x=(double)(pedido.calcularPrecioT()/(double)cuotas);
+	
+	numcuotasP=Integer.parseInt(JOptionPane.showInputDialog("cuantas cuotas desea pagar"));
+     
+	double pagot= (double)(x*numcuotasP);
+	 
+	double z= tarjeta.getSaldo()-pagot;
+	 
+	for(int i=0;i<pedido.getProductos().size();i++) {
+		
+	System.out.println("se ha pagado "+numcuotasP+" de "+pedido.getProductos().get(i).getNombre()+
+			" cuotas y quedan por pagar por pagar "+(cuotas-numcuotasP));
+
+	}	
+   }		
+}
+	
+}
+
+public void pagarpedido(Cheque cheque) {
+	
+if(cheque.getMonto()-pedido.getValor()>0) {
+	
+	pedido.setEstado(Estado.PAGADO);
+	
+System.out.println("el pedido ha sido pagado con exito");	
+	
+}
+else {
+	
+	if(cheque.getMonto()-pedido.calcularPrecioT()<0) {
+
+	pedido.setEstado(Estado.PENDIENTE);
+		
+	System.out.println("el pedido no ha sido pagado debido a fondos insuficientes");
+	
+	}	
+   }		
+}
+
+public void pagarpedido(Efectivo efectivo) {
+
+efectivo.setMonto(pedido.calcularPrecioT());	
+	
+
+if(efectivo.getMonto()-pedido.calcularPrecioT()>0) {
+pedido.setEstado(Estado.PAGADO);
+	
+System.out.println("el pedido ha sido pagado con exito");	
+
+}else {
+	
+	pedido.setEstado(Estado.PENDIENTE);
+	
+	System.out.println("el pedido no ha sido pagado debido a fondos insuficientes");
+	
+}
+
+}
+	
+	
+
+}

@@ -1,0 +1,5 @@
+module Actividad_2 {
+	requires javafx.controls;
+	
+	opens mundo to javafx.graphics, javafx.fxml;
+}

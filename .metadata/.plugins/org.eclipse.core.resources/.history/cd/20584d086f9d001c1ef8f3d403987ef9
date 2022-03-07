@@ -1,0 +1,39 @@
+package mundo;
+
+import java.util.Date;
+
+public class Cheque {
+	
+	private String nombre;
+	private String entidadbanc;
+	
+	public Cheque() {
+		
+	}
+	
+	public Cheque(String nombre, String entidadbanc) {
+		this.nombre = nombre;
+		this.entidadbanc = entidadbanc;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getEntidadbanc() {
+		return entidadbanc;
+	}
+
+	public void setEntidadbanc(String entidadbanc) {
+		this.entidadbanc = entidadbanc;
+	}	
+	
+    
+	
+	
+	
+}

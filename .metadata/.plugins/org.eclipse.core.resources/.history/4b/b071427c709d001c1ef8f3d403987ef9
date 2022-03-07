@@ -1,0 +1,75 @@
+package mundo;
+	
+public class Producto{
+	
+private String nombre;
+private short cantidad;
+private float precio;
+private String origen;
+public float iva;
+	
+
+public Producto(String nombre, short cantidad,float precio,String origen,float iva) {	
+this.nombre=nombre;
+this.cantidad=cantidad;
+this.precio=precio;
+this.origen=origen;
+this.iva=iva;
+}
+
+
+public String getNombre() {
+	return nombre;
+}
+
+
+public void setNombre(String nombre) {
+	this.nombre = nombre;
+}
+
+
+public short getCantidad() {
+	return cantidad;
+}
+
+
+public void setCantidad(short cantidad) {
+	this.cantidad = cantidad;
+}
+
+
+public float getPrecio() {
+	return precio;
+}
+
+
+public void setPrecio(float precio) {
+	this.precio = precio;
+}
+
+
+public String getOrigen() {
+	return origen;
+}
+
+
+public void setOrigen(String origen) {
+	this.origen = origen;
+}
+
+
+public float getIva() {
+	return iva;
+}
+
+
+public void setIva(float iva) {
+	this.iva = iva;
+};	
+	
+	
+	
+	
+	
+	
+}

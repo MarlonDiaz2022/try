@@ -1,0 +1,63 @@
+package Vista;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import Modelo.Cliente;
+import Modelo.Producto;
+
+public class Interfaz {
+	
+
+			System.out.println("bienvenidos a la interfaz de la tienda");
+			System.out.println("Seleccione la opcion que desea realizar");
+			
+			JOptionPane.showInputDialog("1) crear un cliente");
+			JOptionPane.showInputDialog("2) crear un producto");
+			JOptionPane.showInputDialog("3) crear un pedido");
+			JOptionPane.showInputDialog("4) mostrar info producto");
+			JOptionPane.showInputDialog("5) mostrar info pedido");
+	
+		
+	
+	
+public Cliente crearCliente() {
+	
+	String nombre= JOptionPane.showInputDialog("ingrese un nombre");
+	String id= JOptionPane.showInputDialog("ingrese un id o numero de identificacion");
+	String correo= JOptionPane.showInputDialog("ingrese un correo electronico");
+	
+	return new Cliente(nombre, id,correo);	
+}
+
+public Producto crearProducto() {
+	
+	String nombre= JOptionPane.showInputDialog("ingrese un nombre");
+	short cantidad= Short.parseShort(JOptionPane.showInputDialog("ingrese un id o numero de identificacion"));
+	double precio= Double.parseDouble(JOptionPane.showInputDialog("ingrese un correo electronico"));
+	String origen= JOptionPane.showInputDialog("ingrese un nombre");
+	double iva= Double.parseDouble(JOptionPane.showInputDialog("ingrese un id o numero de identificacion"));
+	
+	return new Producto(nombre,cantidad,precio,origen,iva);		
+}
+
+public void listarProdcutos(ArrayList<Producto> productos) {
+
+System.out.println("Datos de los productos");
+
+
+for(int i=0; i<productos.size();i++) {
+	
+  System.out.println("los productos de la son los siguientes:"+productos.get(i).getNombre());
+}
+
+
+}
+
+	
+	
+	
+}	
+
+

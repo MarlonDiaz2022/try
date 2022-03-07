@@ -1,0 +1,14 @@
+package Fachada;
+
+import Modelo.Pedido;
+import Modelo.Producto;
+
+public class Prueba {
+	
+	
+Producto pro = new Producto();	
+	
+Pedido ped = new Pedido();	
+	
+
+}

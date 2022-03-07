@@ -1,0 +1,81 @@
+package mundo;
+
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Pedido {
+	
+private ArrayList<Producto> productos;	
+private Estado estado;
+private Date fechadelpedido;
+
+
+
+
+public Pedido(Producto productos, Estado estado, Date fechadelpedido) {
+	this.productos= new ArrayList<>();
+	this.estado = estado;
+	this.fechadelpedido = fechadelpedido;
+}
+
+public ArrayList<Producto> getProductos() {
+	return productos;
+}
+
+public void setProductos(ArrayList<Producto> productos) {
+	this.productos = productos;
+}
+
+public Estado getEstado() {
+	return estado;
+}
+
+public void setEstado(Estado estado) {
+	this.estado = estado;
+}
+
+public Date getFechadelpedido() {
+	return fechadelpedido;
+}
+
+public void setFechadelpedido(Date fechadelpedido) {
+	this.fechadelpedido = fechadelpedido;
+}
+	
+
+public void realizarPedido(Producto pro , Date fecha) {
+	
+	for(int i=0; i<productos.size(); i++) {	
+	productos.add(pro);
+	Date feachapedi = fecha;
+	
+}
+	
+if(productos.size()>1) {	
+System.out.printf("se ha realizo un pedido ");
+}
+else {
+System.out.printf("un pedido debe tener al menos un producto ");
+}
+	
+}
+
+public void mostrarPedido(){
+	
+	for(int i=0; i<productos.size(); i++) {
+		
+		System.out.printf("el pedido"+i+"tiene"+productos.get(i).getNombre()+" con un precio de "+productos.get(i).getPrecio());	
+	 	
+	}
+		
+}
+
+public void calcularPrecioT() {
+	
+}
+
+
+
+
+
+}
